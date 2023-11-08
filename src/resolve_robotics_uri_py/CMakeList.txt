@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.12)
+project(ResolveRoboticsURI)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# Define the library target
+add_library(ResolveRoboticsUri INTERFACE)
+target_include_directories(ResolveRoboticsUri INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# Create an executable using the library
+#add_executable(MyRoboticsURIRApp main.cpp)
+#target_link_libraries(ResolveRoboticsUri PRIVATE ResolveRoboticsUri)
+
+install(TARGETS ResolveRoboticsURI
+    EXPORT ResolveRoboticsURITargets
+    INCLUDES DESTINATION include
+)
+
+install(DIRECTORY include/ DESTINATION include)
+
+install(EXPORT ResolveRoboticsURITargets
+    DESTINATION lib/cmake/ResolveRoboticsURI
+)
+
+export(TARGETS ResolveRoboticsURI
+    FILE ResolveRoboticsURI.cmake
+)
