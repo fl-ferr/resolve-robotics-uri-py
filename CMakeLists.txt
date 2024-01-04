@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(ResolveRoboticsURI
     VERSION 1.0.0
     DESCRIPTION "Resolve Robotics URI"
@@ -7,11 +7,9 @@ project(ResolveRoboticsURI
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Define your library
 add_library(ResolveRoboticsURI INTERFACE)
 target_include_directories(ResolveRoboticsURI INTERFACE include/)
 
-# Install target
 install(
     TARGETS ResolveRoboticsURI
     EXPORT ResolveRoboticsURIConfig
@@ -23,7 +21,6 @@ install(
     DESTINATION include
 )
 
-# Export target for other projects
 install(
     EXPORT ResolveRoboticsURIConfig
     DESTINATION cmake
