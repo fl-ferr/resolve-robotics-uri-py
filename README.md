@@ -19,7 +19,7 @@ Include the library in your C++ file, then take inspiration from the following e
 
 ```cpp
 #include <iostream>
-#include "ResolveRoboticsURI.h"
+#include "ResolveRoboticsURI.hpp"
 
 int main() {
     try {
